@@ -12,7 +12,7 @@ const doTimeUpdate = function (e) {
     const currentTime = JSON.stringify(e);
     
     localStorage.setItem("videoplayer-current-time", currentTime);
-
+    
     console.log(localStorage);
 };
 
@@ -21,7 +21,7 @@ player.on('timeupdate', throttle(doTimeUpdate, 1000));
 
 window.addEventListener('load', onPageReload);
 
-const onPageReload = function (e) {
+function onPageReload (e) {
     // console.log("page reload");
 
     const timeFromStorage = localStorage.getItem("videoplayer-current-time");
