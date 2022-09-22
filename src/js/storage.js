@@ -19,7 +19,7 @@ export const load = key => {
 
 export const remove = key => {
   try {
-    localStorage.remove(key);
+    localStorage.removeItem(key);
   } catch (error) {
     console.error("Get state error: ", error.message);
   }

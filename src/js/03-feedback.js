@@ -6,7 +6,6 @@ const formRef = document.querySelector(".feedback-form");
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
 
-
 fillForm();
 
 const onFormInput = (e) => {
@@ -30,10 +29,8 @@ function fillForm() {
         return;
     }
 Object.entries(savedData).forEach(([key, value]) => {
-            console.log(key);
-            console.log(value);
-            formRef.elements[key].value = value;
-        }); 
+        formRef.elements[key].value = value;
+    }); 
 };
 
 const onFormSubmit = e => {
@@ -42,7 +39,6 @@ const onFormSubmit = e => {
         elements: { email, message }
     } = e.currentTarget;
 
-    console.log({ email: email.value, message: message.value });
     e.currentTarget.reset();
     remove(LOCAL_STORAGE_KEY);
 }
